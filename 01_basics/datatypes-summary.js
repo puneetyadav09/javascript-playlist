@@ -38,8 +38,8 @@ const fun1 = function(){
 
 // ***************************Memory*************************** //
 /*
-Stack => Primitive datatypes
-Heap => Non-Primitive datatypes
+Stack => Primitive datatypes     => copy passes and changes in copy only
+Heap => Non-Primitive datatypes  => Reference given and changes in reference
 */
 
 let name = "Puneet";
