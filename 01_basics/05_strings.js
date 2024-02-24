@@ -20,3 +20,12 @@ const newString = getName.substring(1, 3);   ///Don't use -ve values
 const newString2 = getName.slice(-5, 1);   ///Can use -ve values
 // console.log(newString2);
 
+const newStringOne = "    Puneet   ";
+// console.log(newStringOne.trim());
+
+const url = "https://google.com/google%20maps";
+// console.log(url.replace('%20', ''));
+
+const sentence = "The quick brown fox jumps over the lazy dog";
+const words = sentence.split(" ");
+// console.log(words);
