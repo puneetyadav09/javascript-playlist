@@ -33,3 +33,34 @@ const obj6 = {...obj1, ...obj2, ...obj3};
 // console.log(obj6);
 
 
+const obj7 = [
+    {
+        id: 1,
+        email: "user1@gmail.com"
+    },
+    {
+        id: 2,
+        email: "user2@gmail.com"
+    },
+    {
+        id: 3,
+        email: "user3@gmail.com"
+    },
+    {
+        id: 4,
+        email: "user4@gmail.com"
+    }
+]
+
+// console.log(obj7);
+// console.log(obj7[0]);
+// console.log(obj7[3].id);
+
+// console.log(Object.keys(obj7[0]));
+// console.log(Object.values(obj7[0]));
+// console.log(Object.entries(obj7));
+// console.log(Object.entries(obj7[0]));
+
+
+console.log(obj7.hasOwnProperty('2'));
+console.log(obj7[0].hasOwnProperty('name'));
