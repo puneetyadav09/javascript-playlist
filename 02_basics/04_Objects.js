@@ -1,9 +1,9 @@
 // const tinderObject = new Object();       //// SingleTon Object
-// const tinderObject = {};                  /////Non SingleTon Object
+const tinderObject = {};                  /////Non SingleTon Object
 
-// tinderObject.id = "123";
-// tinderObject.name = "Puneet";
-// tinderObject.age = 20;
+tinderObject.id = "123";
+tinderObject.name = "Puneet";
+tinderObject.age = 20;
 
 const details = {
     id: 1234,
@@ -24,11 +24,13 @@ const obj3 = {5: "e", 6: "f"};
 
 const obj4 = {obj1, obj2, obj3};
 
+// if {} is not written in below line then we can understand that all objects are merge and added in first object then clone to obj5
 const obj5 = Object.assign({}, obj1, obj2, obj3);   //// {} act as target and obj1, obj2, obj3 act as source and all values store in {}
 
 const obj6 = {...obj1, ...obj2, ...obj3};
 
 // console.log(obj4);
+// console.log(Object.keys(obj4));
 // console.log(obj5);
 // console.log(obj6);
 
@@ -62,5 +64,17 @@ const obj7 = [
 // console.log(Object.entries(obj7[0]));
 
 
-console.log(obj7.hasOwnProperty('2'));
-console.log(obj7[0].hasOwnProperty('name'));
+// console.log(obj7.hasOwnProperty('2'));
+// console.log(obj7[0].hasOwnProperty('name'));
+
+
+const course = {
+    courseName: "Javascript Tutorials",
+    price: "999",
+    courseCreatedBy: "Puneet"
+}
+
+const {courseCreatedBy: instructor} = course;   //// courseCreatedBy is keys from course and instructor is any variable name
+
+// console.log(courseCreatedBy);
+console.log(instructor);
