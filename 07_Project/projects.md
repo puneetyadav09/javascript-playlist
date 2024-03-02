@@ -84,5 +84,45 @@ setInterval(function () {
 // const minutes = mydate.getMinutes();
 // const seconds = mydate.getSeconds().toPrecision(2);
 // div.innerHTML = `<span>${hours}:${minutes}:${seconds}</span>`;
+```
 
+## Project 4
+
+```Javascript
+console.log('Puneet');
+
+const button = document.querySelector('#submit');
+const finalResult = document.querySelector("#finalResult");
+const input = document.querySelector('input');
+const prevguess = document.querySelector('#prevguess');
+const remain = document.querySelector('#remaining');
+remain.appendChild(document.createTextNode('10'));
+const number = Math.floor(Math.random() * 100 + 1);
+let i = 1, prev = "", curr = "";
+
+button.addEventListener('click', (e) => {
+  e.preventDefault();
+  prev = curr;
+  prevguess.innerHTML = prev;
+  const inputValue = parseInt(input.value);
+  if(inputValue === "" || inputValue < 0 || isNaN(inputValue)){
+    finalResult.innerHTML = "Please enter valid number.";
+  } else {
+    if(inputValue === number){
+      finalResult.innerHTML = "You guess correct number. Please refresh to play again";
+      input.disabled = true;
+    }
+    else{
+      const value = parseInt(remain.innerHTML);
+      if(value === 0){
+        finalResult.innerHTML = "You can't guess. Please refresh for more attempts";
+        input.disabled = true;
+      } else{
+        finalResult.innerHTML = "Wrong Guess";
+        remain.innerHTML = value - 1;
+        curr = inputValue;
+      }
+    }
+  }
+});
 ```
