@@ -49,9 +49,9 @@
     document.querySelector("#images").addEventListener("click", function(e){
         console.log(e.target.tagName);
         if (e.target.tagName==="LI") {
-            e.target.remove();
+            e.target.remove();               //// first method to remove element 
         } else {
-            e.target.parentNode.remove();               //// first method to remove element 
+            e.target.parentNode.remove();
         }          
     })
 
