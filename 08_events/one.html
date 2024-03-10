@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - First Tutorial</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" src="https://images.unsplash.com/photo-1508138221679-760a23a2285b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fHww" alt="aeroplane" id="aeroplane"></li>
+            <li><img width="200px" src="https://images.unsplash.com/photo-1496449903678-68ddcb189a24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJhbmRvbXxlbnwwfHwwfHx8MA%3D%3D" alt="" id="text"></li>
+            <li><img width="200px" src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="" id="sea"></li>
+            <li><img width="200px" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="" id="sunset"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById("aeroplane").onclick = function(){
+    //     alert("Aeroplane Clicked");
+    // }                                             //// Using onclick we can't get more information so we have to use addEventListener
+        
+    // attachEvent() function
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("images").addEventListener('click', function(e){
+    //     console.log("Clicked inside ul");
+    // }, false)
+
+    // document.getElementById("aeroplane").addEventListener('click', function(e){
+    //     console.log("Clicked on aeroplane");
+    //     e.stopPropagation();                 ///// stop bubbling
+    // }, false)
+
+    // document.getElementById("google").addEventListener("click", function(e){
+    //     console.log("Google clicked");
+    //     e.preventDefault();                  ///// stop redirecting to that link
+    //     e.stopPropagation();                 ///// stop bubbling
+    // })
+
+    document.querySelector("#images").addEventListener("click", function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName==="LI") {
+            e.target.remove();
+        } else {
+            e.target.parentNode.remove();               //// first method to remove element 
+        }          
+    })
+
+</script>
+
+</html>
