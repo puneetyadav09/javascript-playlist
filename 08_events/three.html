@@ -17,11 +17,14 @@
 
     let intervalId;
     document.querySelector("#start").addEventListener("click", function(){
-        intervalId = setInterval(nameDate, 1000, "Puneet");
+        if(!intervalId){                             /////// checking intervalId either as null or undefined
+            intervalId = setInterval(nameDate, 1000, "Puneet");
+        }
     })  ///// Repeat itself after time interval with having handle as first parameter and time interval as second parameter and any argument to handler(function) as third parameter
 
     document.querySelector("#stop").addEventListener("click", function(){
         clearInterval(intervalId);       //// Clear setInterval time and stop executing it.
+        intervalId = null;               //// Flushing intervalId 
         console.log("Interval STOPPED");
     })
 </script>
