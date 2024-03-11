@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Time Functions</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayPuneet = function(){
+        console.log("Hi, Puneet");
+    }
+
+    const changeText = function(){
+        document.querySelector("h1").innerHTML = "Javascript Tutorial"
+    }
+    const changeMe = setTimeout(changeText, 2000);          ///// It will execute only once after time limit and stop. It will not repeat again untill page is not refresh. Here sayPuneet is handler so we have to give only reference not to execute the function.
+
+    document.querySelector("#stop").addEventListener("click", function(){
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    })
+</script>
+</html>
