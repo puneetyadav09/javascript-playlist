@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body>
+    <div class="knowledge">
+        UNSENT (numeric value 0) <br>
+        OPENED (numeric value 1) <br>
+        HEADERS_RECEIVED (numeric value 2) <br>
+        LOADING (numeric value 3) <br>
+        DONE (numeric value 4) <br>
+    </div>
+    <br><br>
+    <button class="fetchData">Fetch Data</button>
+    <br><br>
+    <div class="info"></div>
+</body>
+<script>
+    const info = document.querySelector(".info");
+    let data;
+    const requestURL = "https://api.github.com/users/puneetyadav09";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            data = JSON.parse(this.responseText);
+        }
+    }
+    xhr.send();
+
+    document.querySelector(".fetchData").addEventListener("click", (e) => {
+        info.innerHTML = `
+                <div class="name">User Name: ${data["login"]}</div>
+                <div class="image"><img src="${data["avatar_url"]}" alt="Avatar"></div>
+                <div class="follower">Followers: ${data["followers"]}</div>
+            `;
+    })
+</script>
+</html>
