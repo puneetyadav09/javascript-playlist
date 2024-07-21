@@ -17,8 +17,12 @@
     const changeText = function(){
         document.querySelector("h1").innerHTML = "Javascript Tutorial"
     }
-    const changeMe = setTimeout(changeText, 2000);          ///// It will execute only once after time limit and stop. It will not repeat again untill page is not refresh. Here sayPuneet is handler so we have to give only reference not to execute the function.
+    const changeMe = setTimeout(changeText, 2000);          
+    ///// It will execute only once after time limit and stop. It will not repeat again untill page is not refresh. 
+    ///// Here sayPuneet is handler so we have to give only reference not to execute the function.
 
+
+    
     document.querySelector("#stop").addEventListener("click", function(){
         clearTimeout(changeMe);
         console.log("STOPPED");
