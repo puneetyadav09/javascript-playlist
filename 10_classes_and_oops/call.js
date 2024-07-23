@@ -5,6 +5,9 @@ function SetUsername(username){
 }
 
 function createUser(username, email, password){
+    // call is used to executing and getting username from above function and 
+    // this in call is used to sharing current execution context so that it return in execution context of this function
+    // not in previous
     SetUsername.call(this, username)
    
     this.email = email
